@@ -11,6 +11,7 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 import lombok.Data;
+import org.primefaces.PrimeFaces;
 
 @Data
 @Named
@@ -22,6 +23,8 @@ public class TestView implements Serializable {
     private BigDecimal decimal;
     private LocalDateTime localDateTime;
     private List<TestObject> list;
+
+    private Integer count =0;
     
     @PostConstruct  
     public void init() {
@@ -34,4 +37,9 @@ public class TestView implements Serializable {
         ));
     }
 
+    public void dynamicMenue(String menue) {
+        count++;
+        System.out.println("dynamicMenue: " + count + " " + menue);
+        PrimeFaces.current().dialog().openDynamic("menue");
+    };
 }

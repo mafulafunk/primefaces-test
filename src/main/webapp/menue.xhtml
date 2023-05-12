@@ -13,13 +13,6 @@
         <h:outputStylesheet name="test.css" />
     </h:head>
     <h:body>
-
-        <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
-            <p:outputLabel value="Count : #{testView.count}"><p:autoUpdate on="autoUpdate"></p:autoUpdate></p:outputLabel>
-            <p:poll intervall="2" listener="#{testView.dynamicMenue('autoUpdate')}" update="@obs(autoUpdate)"></p:poll>
-            <p:commandButton value="onSubmit" action="#{testView.dynamicMenue('submit')}" />
-        </h:form>
-
+        <h1>Menue</h1>
     </h:body>
 </html>
